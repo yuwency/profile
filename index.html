@@ -21,8 +21,8 @@
 </head>
 <body class="font-sans antialiased text-gray-800 bg-gray-900 min-h-screen flex flex-col items-center justify-center relative overflow-x-hidden p-4">
 
-    <!-- 背景圖片與暗色遮罩 (預設載入 images/bg1.JPG) -->
-    <div id="bg-carousel" class="absolute inset-0 bg-cover bg-center z-0 transition-all duration-1000 ease-in-out" style="background-image: url('images/bg1.JPG');">
+    <!-- 背景圖片與暗色遮罩 (預設載入 images/bg1.jpg) -->
+    <div id="bg-carousel" class="absolute inset-0 bg-cover bg-center z-0 transition-all duration-1000 ease-in-out" style="background-image: url('images/bg1.jpg');">
         <div class="absolute inset-0 bg-black/40 backdrop-blur-[2px]"></div>
     </div>
 
@@ -45,9 +45,9 @@
     <main class="relative z-10 w-[90%] max-w-3xl mt-24 mb-10">
         <div class="bg-white/40 backdrop-blur-xl border border-white/30 rounded-[40px] p-8 md:p-12 shadow-2xl flex flex-col items-center text-center">
             
-            <!-- 大頭貼 (指向大寫 images/avatar.JPG) -->
+            <!-- 大頭貼 (指向 images/avatar.jpg) -->
             <div class="w-32 h-32 md:w-36 md:h-36 rounded-full overflow-hidden border-4 border-white shadow-xl mb-6">
-                <img src="images/avatar.JPG" alt="吳玉雯" class="w-full h-full object-cover">
+                <img src="images/avatar.jpg" alt="吳玉雯" class="w-full h-full object-cover">
             </div>
 
             <!-- 名字與左側紫色裝飾 -->
@@ -90,21 +90,21 @@
         </div>
     </main>
 
-    <!-- 背景自動輪播 JavaScript (包含 bg1.JPG ~ bg6.JPG) -->
+    <!-- 背景自動輪播 JavaScript (全小寫 bg1.jpg ~ bg6.jpg) -->
     <script>
         const backgroundImages = [
-            'images/bg1.JPG',
-            'images/bg2.JPG',
-            'images/bg3.JPG',
-            'images/bg4.JPG',
-            'images/bg5.JPG',
-            'images/bg6.JPG'
+            'images/bg1.jpg',
+            'images/bg2.jpg',
+            'images/bg3.jpg',
+            'images/bg4.jpg',
+            'images/bg5.jpg',
+            'images/bg6.jpg'
         ];
 
         let currentIndex = 0;
         const bgCarousel = document.getElementById('bg-carousel');
 
-        // 預載所有圖片，切換時更順暢
+        // 預載圖片
         backgroundImages.forEach(src => {
             const img = new Image();
             img.src = src;
@@ -115,7 +115,7 @@
             bgCarousel.style.backgroundImage = `url('${backgroundImages[currentIndex]}')`;
         }
 
-        // 每 5 秒自動順暢輪播背景
+        // 每 5 秒自動切換背景照片
         setInterval(changeBackground, 5000);
     </script>
 </body>
