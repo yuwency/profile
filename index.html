@@ -21,19 +21,15 @@
 </head>
 <body class="font-sans antialiased text-gray-800 bg-gray-900 min-h-screen flex flex-col items-center justify-center relative overflow-x-hidden p-4">
 
-    <!-- 背景圖片與暗色遮罩 (支援自動輪播) -->
-    <!-- 加上 transition-all duration-1000 讓背景切換時有 1 秒的柔和漸變效果 -->
-    <div id="bg-carousel" class="absolute inset-0 bg-cover bg-center z-0 transition-all duration-1000 ease-in-out" style="background-image: url('images/bg1.jpg');">
-        <!-- 疊加一層暗色半透明，並稍微模糊，凸顯主卡片 -->
+    <!-- 背景圖片與暗色遮罩 (預設載入 images/background.jpg 或 images/bg1.jpg) -->
+    <div id="bg-carousel" class="absolute inset-0 bg-cover bg-center z-0 transition-all duration-1000 ease-in-out" style="background-image: url('images/background.jpg');">
         <div class="absolute inset-0 bg-black/40 backdrop-blur-[2px]"></div>
     </div>
 
     <!-- 頂部膠囊導覽列 (Navbar) -->
     <header class="w-[92%] max-w-7xl fixed top-4 z-50 bg-white/90 backdrop-blur-md py-3 px-6 rounded-full shadow-lg flex justify-between items-center">
-        <!-- 左側 Logo -->
         <div class="text-purple-600 font-black tracking-wider text-lg">YUWEN</div>
         
-        <!-- 導覽選單 -->
         <nav class="hidden md:flex items-center space-x-6 text-xs md:text-sm font-medium text-gray-600">
             <a href="#" class="bg-purple-100 text-purple-600 px-4 py-1.5 rounded-full border border-purple-200">首頁</a>
             <a href="#about" class="hover:text-purple-600 transition">簡介</a>
@@ -46,18 +42,16 @@
     </header>
 
     <!-- 主體內容：毛玻璃個人卡片 -->
-    <main class="relative z-10 w-[90%] max-w-3xl mt-24 mb-10 animate-fade-in-up">
-        <!-- bg-white/40 & backdrop-blur-xl 是毛玻璃的關鍵 -->
+    <main class="relative z-10 w-[90%] max-w-3xl mt-24 mb-10">
         <div class="bg-white/40 backdrop-blur-xl border border-white/30 rounded-[40px] p-8 md:p-12 shadow-2xl flex flex-col items-center text-center">
             
-            <!-- 大頭貼（自訂頭像） -->
+            <!-- 大頭貼（預設讀取 images/avatar.jpg） -->
             <div class="w-32 h-32 md:w-36 md:h-36 rounded-full overflow-hidden border-4 border-white shadow-xl mb-6">
                 <img src="images/avatar.jpg" alt="吳玉雯" class="w-full h-full object-cover">
             </div>
 
             <!-- 名字與左側紫色裝飾 -->
             <div class="relative inline-block mb-2">
-                <!-- 左側紫色裝飾塊 -->
                 <div class="absolute left-0 top-0 bottom-0 w-3 bg-purple-500/80 rounded-l-lg transform -translate-x-4"></div>
                 <h1 class="text-4xl md:text-5xl font-black text-slate-900 tracking-wide px-2 bg-purple-100/60 rounded-r-lg">
                     吳玉雯
@@ -76,7 +70,7 @@
                 <span>資訊管理學系</span>
             </p>
 
-            <!-- 專業標籤群 (Badges) -->
+            <!-- 專業標籤群 -->
             <div class="flex flex-wrap justify-center gap-3 mb-8">
                 <span class="bg-purple-100/80 text-purple-600 border border-purple-200 text-xs md:text-sm font-semibold px-4 py-1.5 rounded-full shadow-sm hover:scale-105 transition duration-200">
                     UI/UX 介面設計
@@ -96,34 +90,25 @@
         </div>
     </main>
 
-    <!-- 背景自動輪播 JavaScript -->
+    <!-- 背景圖片切換機制 -->
     <script>
-        // 在這裡設定你要輪播的背景照片路徑
+        // 如果你的 images/ 資料夾內有多張背景，可以在這裡替換檔名
         const backgroundImages = [
-            'images/bg1.jpg',
-            'images/bg2.jpg',
-            'images/bg3.jpg'
+            'images/background.jpg'
+            // 如果有第二張、第三張，請取消下面註解並填寫正確檔名：
+            // , 'images/bg2.jpg'
+            // , 'images/bg3.jpg'
         ];
 
         let currentIndex = 0;
         const bgCarousel = document.getElementById('bg-carousel');
 
-        // 預載圖片功能，防止切換時出現短暫空白
-        backgroundImages.forEach(src => {
-            const img = new Image();
-            img.src = src;
-        });
-
-        function changeBackground() {
-            // 計算下一張圖片的索引
-            currentIndex = (currentIndex + 1) % backgroundImages.length;
-            
-            // 變更背景圖片
-            bgCarousel.style.backgroundImage = `url('${backgroundImages[currentIndex]}')`;
+        if (backgroundImages.length > 1) {
+            setInterval(() => {
+                currentIndex = (currentIndex + 1) % backgroundImages.length;
+                bgCarousel.style.backgroundImage = `url('${backgroundImages[currentIndex]}')`;
+            }, 5000);
         }
-
-        // 每 5000 毫秒（5秒）自動切換一次背景
-        setInterval(changeBackground, 5000);
     </script>
 </body>
 </html>
