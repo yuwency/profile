@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>吳玉雯 - 個人作品集 Portfolio</title>
-    <!-- 引入 Tailwind CSS 樣式框架 -->
+    <!-- 引入 Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
@@ -21,10 +21,11 @@
 </head>
 <body class="font-sans antialiased text-gray-800 bg-gray-900 min-h-screen flex flex-col items-center justify-center relative overflow-x-hidden p-4">
 
-    <!-- 背景圖片與暗色遮罩（自訂背景：background.jpg） -->
-    <div class="absolute inset-0 bg-cover bg-center z-0" style="background-image: url('background.jpg');">
+    <!-- 背景圖片與暗色遮罩 (支援自動輪播) -->
+    <!-- 加上 transition-all duration-1000 讓背景切換時有 1 秒的柔和漸變效果 -->
+    <div id="bg-carousel" class="absolute inset-0 bg-cover bg-center z-0 transition-all duration-1000 ease-in-out" style="background-image: url('images/bg1.jpg');">
         <!-- 疊加一層暗色半透明，並稍微模糊，凸顯主卡片 -->
-        <div class="absolute inset-0 bg-black/35 backdrop-blur-[2px]"></div>
+        <div class="absolute inset-0 bg-black/40 backdrop-blur-[2px]"></div>
     </div>
 
     <!-- 頂部膠囊導覽列 (Navbar) -->
@@ -45,13 +46,13 @@
     </header>
 
     <!-- 主體內容：毛玻璃個人卡片 -->
-    <main class="relative z-10 w-[90%] max-w-3xl mt-24 mb-10">
+    <main class="relative z-10 w-[90%] max-w-3xl mt-24 mb-10 animate-fade-in-up">
         <!-- bg-white/40 & backdrop-blur-xl 是毛玻璃的關鍵 -->
         <div class="bg-white/40 backdrop-blur-xl border border-white/30 rounded-[40px] p-8 md:p-12 shadow-2xl flex flex-col items-center text-center">
             
-            <!-- 大頭貼（自訂頭像：avatar.jpg） -->
+            <!-- 大頭貼（自訂頭像） -->
             <div class="w-32 h-32 md:w-36 md:h-36 rounded-full overflow-hidden border-4 border-white shadow-xl mb-6">
-                <img src="avatar.jpg" alt="吳玉雯" class="w-full h-full object-cover">
+                <img src="images/avatar.jpg" alt="吳玉雯" class="w-full h-full object-cover">
             </div>
 
             <!-- 名字與左側紫色裝飾 -->
@@ -95,5 +96,34 @@
         </div>
     </main>
 
+    <!-- 背景自動輪播 JavaScript -->
+    <script>
+        // 在這裡設定你要輪播的背景照片路徑
+        const backgroundImages = [
+            'images/bg1.jpg',
+            'images/bg2.jpg',
+            'images/bg3.jpg'
+        ];
+
+        let currentIndex = 0;
+        const bgCarousel = document.getElementById('bg-carousel');
+
+        // 預載圖片功能，防止切換時出現短暫空白
+        backgroundImages.forEach(src => {
+            const img = new Image();
+            img.src = src;
+        });
+
+        function changeBackground() {
+            // 計算下一張圖片的索引
+            currentIndex = (currentIndex + 1) % backgroundImages.length;
+            
+            // 變更背景圖片
+            bgCarousel.style.backgroundImage = `url('${backgroundImages[currentIndex]}')`;
+        }
+
+        // 每 5000 毫秒（5秒）自動切換一次背景
+        setInterval(changeBackground, 5000);
+    </script>
 </body>
 </html>
