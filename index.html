@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh-Hant">
+<html lang="zh-Hant" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -21,14 +21,14 @@
 </head>
 <body class="font-sans antialiased text-gray-800 bg-gray-900 min-h-screen flex flex-col items-center justify-center relative overflow-x-hidden p-4">
 
-    <!-- 背景圖片與暗色遮罩 (預設載入 images/bg1.jpg) -->
-    <div id="bg-carousel" class="absolute inset-0 bg-cover bg-center z-0 transition-all duration-1000 ease-in-out" style="background-image: url('images/bg1.jpg');">
+    <!-- 背景圖片與暗色遮罩 -->
+    <div id="bg-carousel" class="fixed inset-0 bg-cover bg-center z-0 transition-all duration-1000 ease-in-out" style="background-image: url('images/bg1.jpg');">
         <div class="absolute inset-0 bg-black/40 backdrop-blur-[2px]"></div>
     </div>
 
     <!-- 頂部膠囊導覽列 (Navbar) -->
     <header class="w-[92%] max-w-7xl fixed top-4 z-50 bg-white/90 backdrop-blur-md py-3 px-6 rounded-full shadow-lg flex justify-between items-center">
-        <div class="text-purple-600 font-black tracking-wider text-lg">個人簡介</div>
+        <div class="text-purple-600 font-black tracking-wider text-lg">YUWEN</div>
         
         <nav class="hidden md:flex items-center space-x-6 text-xs md:text-sm font-medium text-gray-600">
             <a href="#" class="bg-purple-100 text-purple-600 px-4 py-1.5 rounded-full border border-purple-200">首頁</a>
@@ -41,11 +41,13 @@
         </nav>
     </header>
 
-    <!-- 主體內容：毛玻璃個人卡片 -->
-    <main class="relative z-10 w-[90%] max-w-3xl mt-24 mb-10">
+    <!-- 主體內容容器 -->
+    <main class="relative z-10 w-[90%] max-w-3xl mt-24 mb-16 space-y-12">
+        
+        <!-- 1. 毛玻璃個人主卡片 -->
         <div class="bg-white/40 backdrop-blur-xl border border-white/30 rounded-[40px] p-8 md:p-12 shadow-2xl flex flex-col items-center text-center">
             
-            <!-- 大頭貼 (指向 images/avatar.jpg) -->
+            <!-- 大頭貼 -->
             <div class="w-32 h-32 md:w-36 md:h-36 rounded-full overflow-hidden border-4 border-white shadow-xl mb-6">
                 <img src="images/avatar.jpg" alt="吳玉雯" class="w-full h-full object-cover">
             </div>
@@ -58,12 +60,10 @@
                 </h1>
             </div>
 
-            <!-- 英文名字 -->
             <p class="text-xs md:text-sm font-semibold tracking-[0.3em] text-slate-500 uppercase mb-4">
                 YU WEN WU
             </p>
 
-            <!-- 學校與科系 -->
             <p class="text-sm md:text-base font-medium text-slate-700 mb-6 flex items-center justify-center gap-1">
                 <span>國立聯合大學</span>
                 <span class="text-slate-400">•</span>
@@ -83,14 +83,45 @@
                 </span>
             </div>
 
-            <!-- 聯絡 Email -->
             <a href="mailto:yuwency@gmail.com" class="text-xs md:text-sm font-mono text-slate-600 hover:text-purple-700 hover:underline transition">
-                aa0921007353@gmail.com
+                yuwency@gmail.com
             </a>
         </div>
+
+        <!-- 2. 個人簡介區塊 (About Section) -->
+        <section id="about" class="bg-white/40 backdrop-blur-xl border border-white/30 rounded-[30px] p-8 md:p-10 shadow-xl scroll-mt-28">
+            <div class="flex items-center space-x-3 mb-6">
+                <div class="w-2.5 h-7 bg-purple-600 rounded-full"></div>
+                <h2 class="text-2xl font-bold text-slate-900">個人簡介 About Me</h2>
+            </div>
+
+            <div class="space-y-4 text-slate-700 text-sm md:text-base leading-relaxed">
+                <p>
+                    我是就讀於國立聯合大學資訊管理學系的<strong>吳玉雯</strong>。熱衷於結合前端 UI/UX 設計與後端系統架構，打造兼具視覺質感與良好使用者體驗的互動應用。
+                </p>
+                <p>
+                    具備全棧網頁開發經驗，熟悉 HTML, CSS (Tailwind CSS), JavaScript, PHP 及 MySQL 資料庫操作，並有使用 Python (FastAPI) 與 Node.js 開發後端服務的經驗。擅長運用 Figma 進行介面原型設計，從需求分析到產品實現皆具備獨立完成與團隊協作能力。
+                </p>
+            </div>
+
+            <!-- 技能標籤庫 (Skills) -->
+            <div class="mt-8 pt-6 border-t border-slate-900/10">
+                <h3 class="text-xs md:text-sm font-bold text-slate-500 uppercase tracking-wider mb-4">專業核心技能</h3>
+                <div class="flex flex-wrap gap-2">
+                    <span class="bg-slate-900/10 text-slate-800 text-xs font-medium px-3 py-1.5 rounded-lg">HTML / CSS</span>
+                    <span class="bg-slate-900/10 text-slate-800 text-xs font-medium px-3 py-1.5 rounded-lg">Tailwind CSS</span>
+                    <span class="bg-slate-900/10 text-slate-800 text-xs font-medium px-3 py-1.5 rounded-lg">JavaScript</span>
+                    <span class="bg-slate-900/10 text-slate-800 text-xs font-medium px-3 py-1.5 rounded-lg">PHP / MySQL</span>
+                    <span class="bg-slate-900/10 text-slate-800 text-xs font-medium px-3 py-1.5 rounded-lg">Python (FastAPI)</span>
+                    <span class="bg-slate-900/10 text-slate-800 text-xs font-medium px-3 py-1.5 rounded-lg">Figma (UI/UX)</span>
+                    <span class="bg-slate-900/10 text-slate-800 text-xs font-medium px-3 py-1.5 rounded-lg">Git / GitHub</span>
+                </div>
+            </div>
+        </section>
+
     </main>
 
-    <!-- 背景自動輪播 JavaScript (全小寫 bg1.jpg ~ bg6.jpg) -->
+    <!-- 背景自動輪播 JavaScript -->
     <script>
         const backgroundImages = [
             'images/bg1.jpg',
@@ -104,7 +135,6 @@
         let currentIndex = 0;
         const bgCarousel = document.getElementById('bg-carousel');
 
-        // 預載圖片
         backgroundImages.forEach(src => {
             const img = new Image();
             img.src = src;
@@ -115,7 +145,6 @@
             bgCarousel.style.backgroundImage = `url('${backgroundImages[currentIndex]}')`;
         }
 
-        // 每 5 秒自動切換背景照片
         setInterval(changeBackground, 5000);
     </script>
 </body>
