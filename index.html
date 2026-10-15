@@ -19,110 +19,138 @@
     </script>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;700;900&display=swap" rel="stylesheet">
 </head>
-<body class="font-sans antialiased text-gray-800 bg-gray-900 min-h-screen flex flex-col items-center justify-center relative overflow-x-hidden p-4">
+<body class="font-sans antialiased text-gray-800 bg-slate-50 min-h-screen relative overflow-x-hidden">
 
-    <!-- 背景圖片與暗色遮罩 -->
-    <div id="bg-carousel" class="fixed inset-0 bg-cover bg-center z-0 transition-all duration-1000 ease-in-out" style="background-image: url('images/bg1.jpg');">
-        <div class="absolute inset-0 bg-black/40 backdrop-blur-[2px]"></div>
+    <!-- 首頁輪播照片背景 (Hero 區塊專用，隨頁面滾動淡出) -->
+    <div id="hero-bg-container" class="fixed inset-0 z-0 transition-opacity duration-700 ease-in-out pointer-events-none">
+        <div id="bg-carousel" class="absolute inset-0 bg-cover bg-center transition-all duration-1000 ease-in-out" style="background-image: url('images/bg1.jpg');">
+            <div class="absolute inset-0 bg-black/40 backdrop-blur-[2px]"></div>
+        </div>
     </div>
 
     <!-- 頂部膠囊導覽列 (Navbar) -->
-    <header class="w-[92%] max-w-7xl fixed top-4 z-50 bg-white/90 backdrop-blur-md py-3 px-6 rounded-full shadow-lg flex justify-between items-center">
-        <div class="text-purple-600 font-black tracking-wider text-lg">個人簡介</div>
+    <header class="w-[92%] max-w-7xl fixed top-4 left-1/2 -translate-x-1/2 z-50 bg-white/90 backdrop-blur-md py-3 px-6 rounded-full shadow-lg flex justify-between items-center transition-all duration-300">
+        <!-- 左側動態 Logo / 區塊標題 (滾動時自動變換) -->
+        <div id="nav-logo" class="text-purple-600 font-black tracking-wider text-base md:text-lg transition-all duration-300">
+            YUWEN
+        </div>
         
-        <nav class="hidden md:flex items-center space-x-6 text-xs md:text-sm font-medium text-gray-600">
-            <a href="#" class="bg-purple-100 text-purple-600 px-4 py-1.5 rounded-full border border-purple-200">首頁</a>
-            <a href="#about" class="hover:text-purple-600 transition">簡介</a>
-            <a href="#education" class="hover:text-purple-600 transition">學歷</a>
-            <a href="#experience" class="hover:text-purple-600 transition font-medium">經歷</a>
-            <a href="#projects" class="hover:text-purple-600 transition">專案</a>
-            <a href="https://github.com/yuwency" target="_blank" class="hover:text-purple-600 transition">GitHub</a>
-            <a href="#contact" class="hover:text-purple-600 transition">聯絡方式</a>
+        <!-- 導覽選單 -->
+        <nav class="flex items-center space-x-2 md:space-x-6 text-xs md:text-sm font-medium text-gray-600 overflow-x-auto">
+            <a href="#hero" id="nav-hero" class="nav-item bg-purple-100 text-purple-600 px-3.5 py-1.5 rounded-full border border-purple-200 transition">首頁</a>
+            <a href="#about" id="nav-about" class="nav-item hover:text-purple-600 px-3 py-1.5 rounded-full transition">簡介</a>
+            <a href="#education" id="nav-education" class="nav-item hover:text-purple-600 px-3 py-1.5 rounded-full transition">學歷</a>
+            <a href="#experience" id="nav-experience" class="nav-item hover:text-purple-600 px-3 py-1.5 rounded-full transition">經歷</a>
+            <a href="#projects" id="nav-projects" class="nav-item hover:text-purple-600 px-3 py-1.5 rounded-full transition">專案</a>
+            <a href="https://github.com/yuwency" target="_blank" class="hover:text-purple-600 px-3 py-1.5 rounded-full transition">GitHub</a>
+            <a href="#contact" id="nav-contact" class="nav-item hover:text-purple-600 px-3 py-1.5 rounded-full transition">聯絡方式</a>
         </nav>
     </header>
 
-    <!-- 主體內容容器 -->
-    <main class="relative z-10 w-[90%] max-w-3xl mt-24 mb-16 space-y-12">
+    <!-- 頁面主要內容區 -->
+    <div class="relative z-10 w-full flex flex-col items-center">
         
-        <!-- 1. 毛玻璃個人主卡片 -->
-        <div class="bg-white/40 backdrop-blur-xl border border-white/30 rounded-[40px] p-8 md:p-12 shadow-2xl flex flex-col items-center text-center">
-            
-            <!-- 大頭貼 -->
-            <div class="w-32 h-32 md:w-36 md:h-36 rounded-full overflow-hidden border-4 border-white shadow-xl mb-6">
-                <img src="images/avatar.jpg" alt="吳玉雯" class="w-full h-full object-cover">
-            </div>
-
-            <!-- 名字與左側紫色裝飾 -->
-            <div class="relative inline-block mb-2">
-                <div class="absolute left-0 top-0 bottom-0 w-3 bg-purple-500/80 rounded-l-lg transform -translate-x-4"></div>
-                <h1 class="text-4xl md:text-5xl font-black text-slate-900 tracking-wide px-2 bg-purple-100/60 rounded-r-lg">
-                    吳玉雯
-                </h1>
-            </div>
-
-            <p class="text-xs md:text-sm font-semibold tracking-[0.3em] text-slate-500 uppercase mb-4">
-                YU WEN WU
-            </p>
-
-            <p class="text-sm md:text-base font-medium text-slate-700 mb-6 flex items-center justify-center gap-1">
-                <span>國立聯合大學</span>
-                <span class="text-slate-400">•</span>
-                <span>資訊管理學系</span>
-            </p>
-
-            <!-- 專業標籤群 -->
-            <div class="flex flex-wrap justify-center gap-3 mb-8">
-                <span class="bg-purple-100/80 text-purple-600 border border-purple-200 text-xs md:text-sm font-semibold px-4 py-1.5 rounded-full shadow-sm hover:scale-105 transition duration-200">
-                    UI/UX 介面設計
-                </span>
-                <span class="bg-purple-100/80 text-purple-600 border border-purple-200 text-xs md:text-sm font-semibold px-4 py-1.5 rounded-full shadow-sm hover:scale-105 transition duration-200">
-                    前端網頁開發
-                </span>
-                <span class="bg-purple-100/80 text-purple-600 border border-purple-200 text-xs md:text-sm font-semibold px-4 py-1.5 rounded-full shadow-sm hover:scale-105 transition duration-200">
-                    系統架構與資料庫
-                </span>
-            </div>
-
-            <a href="mailto:yuwency@gmail.com" class="text-xs md:text-sm font-mono text-slate-600 hover:text-purple-700 hover:underline transition">
-                aa0921007353@gmail.com
-            </a>
-        </div>
-
-        <!-- 2. 個人簡介區塊 (About Section) -->
-        <section id="about" class="bg-white/40 backdrop-blur-xl border border-white/30 rounded-[30px] p-8 md:p-10 shadow-xl scroll-mt-28">
-            <div class="flex items-center space-x-3 mb-6">
-                <div class="w-2.5 h-7 bg-purple-600 rounded-full"></div>
-                <h2 class="text-2xl font-bold text-slate-900">個人簡介 About Me</h2>
-            </div>
-
-            <div class="space-y-4 text-slate-700 text-sm md:text-base leading-relaxed">
-                <p>
-                    我是就讀於國立聯合大學資訊管理學系的<strong>吳玉雯</strong>。熱衷於結合前端 UI/UX 設計與後端系統架構，打造兼具視覺質感與良好使用者體驗的互動應用。
-                </p>
-                <p>
-                    具備全棧網頁開發經驗，熟悉 HTML, CSS (Tailwind CSS), JavaScript, PHP 及 MySQL 資料庫操作，並有使用 Python (FastAPI) 與 Node.js 開發後端服務的經驗。擅長運用 Figma 進行介面原型設計，從需求分析到產品實現皆具備獨立完成與團隊協作能力。
-                </p>
-            </div>
-
-            <!-- 技能標籤庫 (Skills) -->
-            <div class="mt-8 pt-6 border-t border-slate-900/10">
-                <h3 class="text-xs md:text-sm font-bold text-slate-500 uppercase tracking-wider mb-4">專業核心技能</h3>
-                <div class="flex flex-wrap gap-2">
-                    <span class="bg-slate-900/10 text-slate-800 text-xs font-medium px-3 py-1.5 rounded-lg">HTML / CSS</span>
-                    <span class="bg-slate-900/10 text-slate-800 text-xs font-medium px-3 py-1.5 rounded-lg">Tailwind CSS</span>
-                    <span class="bg-slate-900/10 text-slate-800 text-xs font-medium px-3 py-1.5 rounded-lg">JavaScript</span>
-                    <span class="bg-slate-900/10 text-slate-800 text-xs font-medium px-3 py-1.5 rounded-lg">PHP / MySQL</span>
-                    <span class="bg-slate-900/10 text-slate-800 text-xs font-medium px-3 py-1.5 rounded-lg">Python (FastAPI)</span>
-                    <span class="bg-slate-900/10 text-slate-800 text-xs font-medium px-3 py-1.5 rounded-lg">Figma (UI/UX)</span>
-                    <span class="bg-slate-900/10 text-slate-800 text-xs font-medium px-3 py-1.5 rounded-lg">Git / GitHub</span>
+        <!-- Section 1: 首頁 Hero 個人卡片 (滿版居中) -->
+        <section id="hero" class="min-h-screen w-full flex items-center justify-center p-4 pt-20">
+            <div class="w-[90%] max-w-3xl bg-white/40 backdrop-blur-xl border border-white/30 rounded-[40px] p-8 md:p-12 shadow-2xl flex flex-col items-center text-center">
+                <!-- 大頭貼 -->
+                <div class="w-32 h-32 md:w-36 md:h-36 rounded-full overflow-hidden border-4 border-white shadow-xl mb-6">
+                    <img src="images/avatar.jpg" alt="吳玉雯" class="w-full h-full object-cover">
                 </div>
+
+                <!-- 名字與紫色裝飾 -->
+                <div class="relative inline-block mb-2">
+                    <div class="absolute left-0 top-0 bottom-0 w-3 bg-purple-500/80 rounded-l-lg transform -translate-x-4"></div>
+                    <h1 class="text-4xl md:text-5xl font-black text-slate-900 tracking-wide px-2 bg-purple-100/60 rounded-r-lg">
+                        吳玉雯
+                    </h1>
+                </div>
+
+                <p class="text-xs md:text-sm font-semibold tracking-[0.3em] text-slate-500 uppercase mb-4">
+                    YU WEN WU
+                </p>
+
+                <p class="text-sm md:text-base font-medium text-slate-700 mb-6 flex items-center justify-center gap-1">
+                    <span>國立聯合大學</span>
+                    <span class="text-slate-400">•</span>
+                    <span>資訊管理學系</span>
+                </p>
+
+                <!-- 專長標籤 -->
+                <div class="flex flex-wrap justify-center gap-3 mb-8">
+                    <span class="bg-purple-100/80 text-purple-600 border border-purple-200 text-xs md:text-sm font-semibold px-4 py-1.5 rounded-full shadow-sm hover:scale-105 transition">
+                        UI/UX 介面設計
+                    </span>
+                    <span class="bg-purple-100/80 text-purple-600 border border-purple-200 text-xs md:text-sm font-semibold px-4 py-1.5 rounded-full shadow-sm hover:scale-105 transition">
+                        前端網頁開發
+                    </span>
+                    <span class="bg-purple-100/80 text-purple-600 border border-purple-200 text-xs md:text-sm font-semibold px-4 py-1.5 rounded-full shadow-sm hover:scale-105 transition">
+                        系統架構與資料庫
+                    </span>
+                </div>
+
+                <a href="mailto:yuwency@gmail.com" class="text-xs md:text-sm font-mono text-slate-600 hover:text-purple-700 hover:underline transition">
+                    aa0921007353@gmail.com
+                </a>
             </div>
         </section>
 
-    </main>
+        <!-- 白色/淺色背景區域容器 (從簡介開始) -->
+        <div class="w-full bg-slate-50/95 backdrop-blur-md pt-12 pb-24 flex flex-col items-center border-t border-slate-200/80 shadow-inner">
+            <main class="w-[90%] max-w-4xl space-y-16">
+                
+                <!-- Section 2: 個人簡介 (About Section) -->
+                <section id="about" class="scroll-mt-28 bg-white border border-slate-200/80 rounded-[30px] p-8 md:p-10 shadow-lg hover:shadow-xl transition duration-300">
+                    <div class="flex items-center space-x-3 mb-6">
+                        <div class="w-3 h-8 bg-purple-600 rounded-full"></div>
+                        <h2 class="text-2xl md:text-3xl font-black text-slate-900">個人簡介 About Me</h2>
+                    </div>
 
-    <!-- 背景自動輪播 JavaScript -->
+                    <div class="space-y-4 text-slate-700 text-sm md:text-base leading-relaxed">
+                        <p>
+                            我是就讀於國立聯合大學資訊管理學系的<strong>吳玉雯</strong>。熱衷於結合前端 UI/UX 設計與後端系統架構，打造兼具視覺質感與良好使用者體驗的互動應用。
+                        </p>
+                        <p>
+                            具備全棧網頁開發經驗，熟悉 HTML, CSS (Tailwind CSS), JavaScript, PHP 及 MySQL 資料庫操作，並有使用 Python (FastAPI) 與 Node.js 開發後端服務的經驗。擅長運用 Figma 進行介面原型設計，從需求分析到產品實現皆具備獨立完成與團隊協作能力。
+                        </p>
+                    </div>
+
+                    <!-- 技能標籤庫 -->
+                    <div class="mt-8 pt-6 border-t border-slate-100">
+                        <h3 class="text-xs md:text-sm font-bold text-slate-400 uppercase tracking-wider mb-4">專業核心技能</h3>
+                        <div class="flex flex-wrap gap-2.5">
+                            <span class="bg-purple-50 text-purple-700 border border-purple-100 text-xs md:text-sm font-medium px-3.5 py-1.5 rounded-xl">HTML / CSS</span>
+                            <span class="bg-purple-50 text-purple-700 border border-purple-100 text-xs md:text-sm font-medium px-3.5 py-1.5 rounded-xl">Tailwind CSS</span>
+                            <span class="bg-purple-50 text-purple-700 border border-purple-100 text-xs md:text-sm font-medium px-3.5 py-1.5 rounded-xl">JavaScript</span>
+                            <span class="bg-purple-50 text-purple-700 border border-purple-100 text-xs md:text-sm font-medium px-3.5 py-1.5 rounded-xl">PHP / MySQL</span>
+                            <span class="bg-purple-50 text-purple-700 border border-purple-100 text-xs md:text-sm font-medium px-3.5 py-1.5 rounded-xl">Python (FastAPI)</span>
+                            <span class="bg-purple-50 text-purple-700 border border-purple-100 text-xs md:text-sm font-medium px-3.5 py-1.5 rounded-xl">Figma (UI/UX)</span>
+                            <span class="bg-purple-50 text-purple-700 border border-purple-100 text-xs md:text-sm font-medium px-3.5 py-1.5 rounded-xl">Git / GitHub</span>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- 預留區塊：學歷與經歷 (未來可填入內容) -->
+                <section id="education" class="scroll-mt-28 bg-white border border-slate-200/80 rounded-[30px] p-8 md:p-10 shadow-lg">
+                    <div class="flex items-center space-x-3 mb-4">
+                        <div class="w-3 h-8 bg-purple-600 rounded-full"></div>
+                        <h2 class="text-2xl md:text-3xl font-black text-slate-900">學歷 Education</h2>
+                    </div>
+                    <div class="text-slate-600 text-sm md:text-base space-y-2">
+                        <div class="flex justify-between items-center font-bold text-slate-800">
+                            <span>國立聯合大學 資訊管理學系</span>
+                            <span class="text-xs bg-slate-100 text-slate-600 px-3 py-1 rounded-full">學士</span>
+                        </div>
+                    </div>
+                </section>
+
+            </main>
+        </div>
+    </div>
+
+    <!-- JavaScript 互動邏輯 (照片輪播 + 滾動切換背景 & 選單高亮) -->
     <script>
+        // 1. 背景圖片自動輪播 (Hero 區塊)
         const backgroundImages = [
             'images/bg1.jpg',
             'images/bg2.jpg',
@@ -140,12 +168,62 @@
             img.src = src;
         });
 
-        function changeBackground() {
+        setInterval(() => {
             currentIndex = (currentIndex + 1) % backgroundImages.length;
-            bgCarousel.style.backgroundImage = `url('${backgroundImages[currentIndex]}')`;
-        }
+            if (bgCarousel) {
+                bgCarousel.style.backgroundImage = `url('${backgroundImages[currentIndex]}')`;
+            }
+        }, 5000);
 
-        setInterval(changeBackground, 5000);
+        // 2. 滾動偵測：控制背景淡出與導覽列 Logo/狀態切換
+        const heroBgContainer = document.getElementById('hero-bg-container');
+        const navLogo = document.getElementById('nav-logo');
+        const aboutSection = document.getElementById('about');
+
+        window.addEventListener('scroll', () => {
+            const scrollPosition = window.scrollY;
+            const aboutOffset = aboutSection.offsetTop - 150;
+
+            // 當滾動超過簡介區塊時，淡出 Hero 照片背景
+            if (scrollPosition >= aboutOffset) {
+                heroBgContainer.classList.add('opacity-0');
+                navLogo.textContent = '個人簡介';
+                navLogo.className = 'text-purple-600 font-black tracking-wide text-base md:text-lg transition-all duration-300';
+            } else {
+                heroBgContainer.classList.remove('opacity-0');
+                navLogo.textContent = 'YUWEN';
+                navLogo.className = 'text-purple-600 font-black tracking-wider text-base md:text-lg transition-all duration-300';
+            }
+        });
+
+        // 3. 選單滾動高亮 (Intersection Observer)
+        const sections = document.querySelectorAll('section[id]');
+        const navItems = document.querySelectorAll('.nav-item');
+
+        const observerOptions = {
+            root: null,
+            rootMargin: '-20% 0px -70% 0px',
+            threshold: 0
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const currentId = entry.target.getAttribute('id');
+                    
+                    navItems.forEach(item => {
+                        item.classList.remove('bg-purple-100', 'text-purple-600', 'border', 'border-purple-200');
+                        item.classList.add('hover:text-purple-600');
+                        
+                        if (item.getAttribute('href') === `#${currentId}`) {
+                            item.classList.add('bg-purple-100', 'text-purple-600', 'border', 'border-purple-200');
+                        }
+                    });
+                }
+            });
+        }, observerOptions);
+
+        sections.forEach(section => observer.observe(section));
     </script>
 </body>
 </html>
