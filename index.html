@@ -21,8 +21,8 @@
 </head>
 <body class="font-sans antialiased text-gray-800 bg-gray-900 min-h-screen flex flex-col items-center justify-center relative overflow-x-hidden p-4">
 
-    <!-- 背景圖片與暗色遮罩 (預設載入 images/background.jpg 或 images/bg1.jpg) -->
-    <div id="bg-carousel" class="absolute inset-0 bg-cover bg-center z-0 transition-all duration-1000 ease-in-out" style="background-image: url('images/background.jpg');">
+    <!-- 背景圖片與暗色遮罩 (預設載入 images/bg1.JPG) -->
+    <div id="bg-carousel" class="absolute inset-0 bg-cover bg-center z-0 transition-all duration-1000 ease-in-out" style="background-image: url('images/bg1.JPG');">
         <div class="absolute inset-0 bg-black/40 backdrop-blur-[2px]"></div>
     </div>
 
@@ -45,9 +45,9 @@
     <main class="relative z-10 w-[90%] max-w-3xl mt-24 mb-10">
         <div class="bg-white/40 backdrop-blur-xl border border-white/30 rounded-[40px] p-8 md:p-12 shadow-2xl flex flex-col items-center text-center">
             
-            <!-- 大頭貼（預設讀取 images/avatar.jpg） -->
+            <!-- 大頭貼 (指向大寫 images/avatar.JPG) -->
             <div class="w-32 h-32 md:w-36 md:h-36 rounded-full overflow-hidden border-4 border-white shadow-xl mb-6">
-                <img src="images/avatar.jpg" alt="吳玉雯" class="w-full h-full object-cover">
+                <img src="images/avatar.JPG" alt="吳玉雯" class="w-full h-full object-cover">
             </div>
 
             <!-- 名字與左側紫色裝飾 -->
@@ -85,30 +85,38 @@
 
             <!-- 聯絡 Email -->
             <a href="mailto:yuwency@gmail.com" class="text-xs md:text-sm font-mono text-slate-600 hover:text-purple-700 hover:underline transition">
-                aa0921007353@gmail.com
+                yuwency@gmail.com
             </a>
         </div>
     </main>
 
-    <!-- 背景圖片切換機制 -->
+    <!-- 背景自動輪播 JavaScript (包含 bg1.JPG ~ bg6.JPG) -->
     <script>
-        // 如果你的 images/ 資料夾內有多張背景，可以在這裡替換檔名
         const backgroundImages = [
-            'images/background.jpg'
-            // 如果有第二張、第三張，請取消下面註解並填寫正確檔名：
-            // , 'images/bg2.jpg'
-            // , 'images/bg3.jpg'
+            'images/bg1.JPG',
+            'images/bg2.JPG',
+            'images/bg3.JPG',
+            'images/bg4.JPG',
+            'images/bg5.JPG',
+            'images/bg6.JPG'
         ];
 
         let currentIndex = 0;
         const bgCarousel = document.getElementById('bg-carousel');
 
-        if (backgroundImages.length > 1) {
-            setInterval(() => {
-                currentIndex = (currentIndex + 1) % backgroundImages.length;
-                bgCarousel.style.backgroundImage = `url('${backgroundImages[currentIndex]}')`;
-            }, 5000);
+        // 預載所有圖片，切換時更順暢
+        backgroundImages.forEach(src => {
+            const img = new Image();
+            img.src = src;
+        });
+
+        function changeBackground() {
+            currentIndex = (currentIndex + 1) % backgroundImages.length;
+            bgCarousel.style.backgroundImage = `url('${backgroundImages[currentIndex]}')`;
         }
+
+        // 每 5 秒自動順暢輪播背景
+        setInterval(changeBackground, 5000);
     </script>
 </body>
 </html>
