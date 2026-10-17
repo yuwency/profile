@@ -41,8 +41,8 @@
             <a href="#hero" id="nav-hero" class="nav-item bg-purple-100 text-purple-600 px-3.5 py-1.5 rounded-full border border-purple-200 transition">首頁</a>
             <a href="#about" id="nav-about" class="nav-item hover:text-purple-600 px-3 py-1.5 rounded-full transition">簡介</a>
             <a href="#education" id="nav-education" class="nav-item hover:text-purple-600 px-3 py-1.5 rounded-full transition">學歷</a>
-            <a href="#experience" id="nav-experience" class="nav-item hover:text-purple-600 px-3 py-1.5 rounded-full transition">經歷</a>
             <a href="#projects" id="nav-projects" class="nav-item hover:text-purple-600 px-3 py-1.5 rounded-full transition">專案</a>
+            <a href="#experience" id="nav-experience" class="nav-item hover:text-purple-600 px-3 py-1.5 rounded-full transition">經歷</a>
             <a href="#github" id="nav-github" class="nav-item hover:text-purple-600 px-3 py-1.5 rounded-full transition">GitHub</a>
             <a href="#contact" id="nav-contact" class="nav-item hover:text-purple-600 px-3 py-1.5 rounded-full transition">聯絡方式</a>
         </nav>
@@ -96,9 +96,9 @@
             </div>
         </section>
 
-        <!-- Section 2: 純色背景區塊 (簡介、學歷、GitHub、聯絡方式) -->
+        <!-- Section 2: 純色背景區塊 -->
         <div class="w-full bg-slate-50 min-h-screen pt-12 pb-24 flex flex-col items-center border-t border-slate-200/80 shadow-inner">
-            <main class="w-[90%] max-w-5xl space-y-16">
+            <main class="w-[90%] max-w-6xl space-y-16">
                 
                 <!-- 簡介區塊 (About) -->
                 <section id="about" class="scroll-mt-28 bg-white border border-slate-200/80 rounded-[30px] p-8 md:p-10 shadow-lg hover:shadow-xl transition duration-300">
@@ -197,7 +197,7 @@
                                     </div>
                                     <div class="flex justify-between items-center bg-slate-50 px-3.5 py-2 rounded-xl border border-slate-100">
                                         <span>資料庫管理系統</span>
-                                        <span class="font-mono text-purple-600 font-bold">96 分[cite: 7.3]</span>
+                                        <span class="font-mono text-purple-600 font-bold">96 分</span>
                                     </div>
                                     <div class="flex justify-between items-center bg-slate-50 px-3.5 py-2 rounded-xl border border-slate-100">
                                         <span>網頁程式設計 (PHP/JS)</span>
@@ -213,7 +213,220 @@
                     </div>
                 </section>
 
-                <!-- GitHub 區塊 (GitHub) -->
+                <!-- 專案作品區塊 (Projects) -->
+                <section id="projects" class="scroll-mt-28">
+                    <div class="flex items-baseline space-x-3 mb-6">
+                        <h2 class="text-3xl font-black text-slate-900 tracking-tight">Projects</h2>
+                        <span class="text-sm font-medium text-slate-400">專案作品</span>
+                    </div>
+
+                    <!-- 三欄式展現卡片網格 -->
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                        
+                        <!-- 專案卡片 1: 𪹚龍 -->
+                        <div class="bg-white border border-slate-200/80 rounded-[28px] overflow-hidden shadow-sm hover:shadow-md transition duration-300 flex flex-col justify-between">
+                            <div>
+                                <div class="w-full h-48 bg-slate-900 overflow-hidden relative">
+                                    <img src="images/project-dragon.jpg" alt="跟著祥龍走" class="w-full h-full object-cover hover:scale-105 transition duration-500">
+                                </div>
+
+                                <div class="p-6">
+                                    <div class="flex justify-between items-center mb-3">
+                                        <span class="bg-purple-100 text-purple-700 text-xs font-bold px-3 py-1 rounded-full">專題</span>
+                                        <span class="text-xs font-mono text-slate-400">2025.07 - 2026.09</span>
+                                    </div>
+
+                                    <h3 class="text-lg font-bold text-slate-900 mb-2 leading-snug">
+                                        跟著祥龍走 — 苗栗𪹚龍文化與互動體驗學習平台
+                                    </h3>
+
+                                    <p class="text-[11px] text-slate-400 font-mono leading-relaxed mb-3">
+                                        團隊 PM、UI/UX、前端 / RPG 地圖整合、Unity WebGL 系統整合、Tiled / PixiJS、Next.js、Unity WebGL、Meta MusicGen-Style、Hugging Face ZeroGPU、Vercel
+                                    </p>
+
+                                    <p class="text-xs text-slate-600 leading-relaxed mb-3">
+                                        以苗栗𪹚龍六個核心階段為學習架構，整合文化場域、客家八音聲景、2D RPG、客語互動任務與苗栗觀光資訊的文化互動學習平台。
+                                    </p>
+
+                                    <ul class="text-xs text-slate-600 space-y-2 list-disc list-inside leading-relaxed mb-4">
+                                        <li>以 Tiled + PixiJS + Next.js 建構苗栗市 RPG 探索地圖，透過 Web ↔ Unity Bridge 啟動六部曲互動</li>
+                                        <li>以 Meta MusicGen-Style 串接 Hugging Face ZeroGPU，依六部曲樂器配置生成 30 秒客家八音聲景，並以 Vercel 提供正式線上體驗</li>
+                                        <li>負責團隊 PM、UI/UX 與跨模組整合；Claude、Codex 用於開發除錯與測試輔助</li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div class="px-6 pb-6 pt-2 flex flex-wrap gap-2">
+                                <a href="https://github.com/yuwency" target="_blank" class="bg-purple-600 hover:bg-purple-700 text-white text-xs font-medium px-4 py-2 rounded-full shadow-sm transition inline-flex items-center gap-1">
+                                    查看作品 ↗
+                                </a>
+                                <a href="#" class="bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs font-medium px-4 py-2 rounded-full transition inline-flex items-center gap-1">
+                                    Demo 影片 ↗
+                                </a>
+                                <a href="#" class="bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs font-medium px-4 py-2 rounded-full transition inline-flex items-center gap-1">
+                                    Case Study ↗
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- 專案卡片 2: 星空探險 -->
+                        <div class="bg-white border border-slate-200/80 rounded-[28px] overflow-hidden shadow-sm hover:shadow-md transition duration-300 flex flex-col justify-between">
+                            <div>
+                                <div class="w-full h-48 bg-emerald-900 overflow-hidden relative">
+                                    <img src="images/project-star.jpg" alt="星空探險" class="w-full h-full object-cover hover:scale-105 transition duration-500">
+                                </div>
+
+                                <div class="p-6">
+                                    <div class="flex justify-between items-center mb-3">
+                                        <span class="bg-amber-100 text-amber-800 text-xs font-bold px-3 py-1 rounded-full">競賽</span>
+                                        <span class="text-xs font-mono text-slate-400">2026.07</span>
+                                    </div>
+
+                                    <h3 class="text-lg font-bold text-slate-900 mb-2 leading-snug">
+                                        星空探險 — 路跑報名網站
+                                    </h3>
+
+                                    <p class="text-[11px] text-slate-400 font-mono leading-relaxed mb-3">
+                                        網站建置、企劃、需求分析、流程設計、前端實作
+                                    </p>
+
+                                    <p class="text-xs text-slate-600 leading-relaxed mb-3">
+                                        路跑活動報名網站，承接 2026 全球品牌大賽高雄初賽企劃。
+                                    </p>
+
+                                    <ul class="text-xs text-slate-600 space-y-2 list-disc list-inside leading-relaxed mb-4">
+                                        <li>負責網站建置與活動企劃</li>
+                                        <li>報名流程設計與前端實作</li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div class="px-6 pb-6 pt-2 flex flex-wrap gap-2">
+                                <a href="https://github.com/yuwency" target="_blank" class="bg-purple-600 hover:bg-purple-700 text-white text-xs font-medium px-4 py-2 rounded-full shadow-sm transition inline-flex items-center gap-1">
+                                    查看作品 ↗
+                                </a>
+                                <a href="https://github.com/yuwency" target="_blank" class="bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs font-medium px-4 py-2 rounded-full transition inline-flex items-center gap-1">
+                                    GitHub ↗
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- 專案卡片 3: MBTI 芳療顧問系統 -->
+                        <div class="bg-white border border-slate-200/80 rounded-[28px] overflow-hidden shadow-sm hover:shadow-md transition duration-300 flex flex-col justify-between">
+                            <div>
+                                <div class="w-full h-48 bg-stone-100 overflow-hidden relative">
+                                    <img src="images/project-mbti.jpg" alt="MBTI 芳療顧問" class="w-full h-full object-cover hover:scale-105 transition duration-500">
+                                </div>
+
+                                <div class="p-6">
+                                    <div class="flex justify-between items-center mb-3">
+                                        <span class="bg-amber-100 text-amber-800 text-xs font-bold px-3 py-1 rounded-full">競賽</span>
+                                        <span class="text-xs font-mono text-slate-400">2026.01</span>
+                                    </div>
+
+                                    <h3 class="text-lg font-bold text-slate-900 mb-2 leading-snug">
+                                        基於 MBTI 人格分析與芳療知識庫的智能精油顧問系統
+                                    </h3>
+
+                                    <p class="text-[11px] text-slate-400 font-mono leading-relaxed mb-3">
+                                        團隊 PM、系統發想/建置、AI 應用、香氛分析、團隊協作
+                                    </p>
+
+                                    <p class="text-xs text-slate-600 leading-relaxed mb-3">
+                                        結合 MBTI 人格分析與芳療知識庫的智能精油顧問系統。
+                                    </p>
+
+                                    <ul class="text-xs text-slate-600 space-y-2 list-disc list-inside leading-relaxed mb-4">
+                                        <li>擔任團隊 PM，主導系統發想與建置</li>
+                                        <li>AI 應用與需求分析</li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div class="px-6 pb-6 pt-2 flex flex-wrap gap-2">
+                                <a href="https://github.com/yuwency" target="_blank" class="bg-purple-600 hover:bg-purple-700 text-white text-xs font-medium px-4 py-2 rounded-full shadow-sm transition inline-flex items-center gap-1">
+                                    查看作品 ↗
+                                </a>
+                                <a href="https://github.com/yuwency" target="_blank" class="bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs font-medium px-4 py-2 rounded-full transition inline-flex items-center gap-1">
+                                    GitHub ↗
+                                </a>
+                            </div>
+                        </div>
+
+                    </div>
+                </section>
+
+                <!-- 經歷與競賽區塊 (Experience) -->
+                <section id="experience" class="scroll-mt-28">
+                    <div class="flex items-baseline space-x-3 mb-6">
+                        <h2 class="text-3xl font-black text-slate-900 tracking-tight">Experience</h2>
+                        <span class="text-sm font-medium text-slate-400">經歷與競賽</span>
+                    </div>
+
+                    <div class="bg-white border border-slate-200/80 rounded-[28px] p-8 shadow-sm space-y-8">
+                        
+                        <!-- 經歷 1: 苗栗青年黑客松 -->
+                        <div class="flex flex-col md:flex-row md:items-start justify-between gap-4 pb-6 border-b border-slate-100">
+                            <div class="space-y-1.5 flex-1">
+                                <div class="flex items-center gap-2">
+                                    <span class="bg-purple-600 text-white text-[11px] font-bold px-2.5 py-0.5 rounded">黑客松競賽</span>
+                                    <h3 class="text-lg font-bold text-slate-900">苗栗青年黑客松競賽 — 桐花 DRESS CODE 觀光提案</h3>
+                                </div>
+                                <p class="text-sm text-slate-600 leading-relaxed pt-1">
+                                    以「桐花 DRESS CODE」為核心構想提出地方創生與區域旅遊促進方案，透過視覺意象結合在地觀光，獲得評審針對永續商業模式與長期經濟效益之寶貴反饋。
+                                </p>
+                            </div>
+                            <span class="text-xs font-mono text-slate-400 shrink-0">2026.09</span>
+                        </div>
+
+                        <!-- 經歷 2: 數位學伴偏鄉教育 -->
+                        <div class="flex flex-col md:flex-row md:items-start justify-between gap-4 pb-6 border-b border-slate-100">
+                            <div class="space-y-1.5 flex-1">
+                                <div class="flex items-center gap-2">
+                                    <span class="bg-cyan-600 text-white text-[11px] font-bold px-2.5 py-0.5 rounded">社會責任 / 志工</span>
+                                    <h3 class="text-lg font-bold text-slate-900">教育部數位學伴計畫 — 線上陪伴輔導大學生</h3>
+                                </div>
+                                <p class="text-sm text-slate-600 leading-relaxed pt-1">
+                                    擔任線上數位學伴，累積 48 小時遠距陪伴與線上教學經歷，為苗栗獅潭與永興地區的偏鄉中小學生提供學業輔導與數位學習支持。
+                                </p>
+                            </div>
+                            <span class="text-xs font-mono text-slate-400 shrink-0">大學期間</span>
+                        </div>
+
+                        <!-- 經歷 3: 信義房屋競賽 -->
+                        <div class="flex flex-col md:flex-row md:items-start justify-between gap-4 pb-6 border-b border-slate-100">
+                            <div class="space-y-1.5 flex-1">
+                                <div class="flex items-center gap-2">
+                                    <span class="bg-blue-600 text-white text-[11px] font-bold px-2.5 py-0.5 rounded">創意競賽</span>
+                                    <h3 class="text-lg font-bold text-slate-900">信義房屋「集思廣益」高齡者福祉創意提案</h3>
+                                </div>
+                                <p class="text-sm text-slate-600 leading-relaxed pt-1">
+                                    針對高齡化社會議題，研擬高齡銀髮族群生活輔助與社會參與提案，展現對於社會議題之敏銳度與創新思考能力。
+                                </p>
+                            </div>
+                            <span class="text-xs font-mono text-slate-400 shrink-0">2025</span>
+                        </div>
+
+                        <!-- 經歷 4: 專業認證與企業面試 -->
+                        <div class="flex flex-col md:flex-row md:items-start justify-between gap-4">
+                            <div class="space-y-1.5 flex-1">
+                                <div class="flex items-center gap-2">
+                                    <span class="bg-amber-600 text-white text-[11px] font-bold px-2.5 py-0.5 rounded">專業認證與實習</span>
+                                    <h3 class="text-lg font-bold text-slate-900">專業資訊證照與企業實習邀請</h3>
+                                </div>
+                                <ul class="text-sm text-slate-600 leading-relaxed list-disc list-inside space-y-1 pt-1">
+                                    <li><strong>IT Specialist Python 國際認證</strong>：高分（940分）通過 Certiport 專業技能測驗（2026.06）</li>
+                                    <li><strong>ERP 規劃師證照</strong>：通過中華企業資源規劃學會專業考照（2026.06）</li>
+                                    <li><strong>緯創資通（Wistron）</strong>：獲邀參與新竹光學助理工程師實習職缺面試（2026.04）</li>
+                                </ul>
+                            </div>
+                            <span class="text-xs font-mono text-slate-400 shrink-0">2026</span>
+                        </div>
+
+                    </div>
+                </section>
+
+                <!-- GitHub 區塊 (GitHub) - 完全比照真實 GitHub 頁面更新 -->
                 <section id="github" class="scroll-mt-28">
                     <div class="flex items-baseline space-x-3 mb-6">
                         <h2 class="text-3xl font-black text-slate-900 tracking-tight">GitHub</h2>
@@ -221,6 +434,7 @@
                     </div>
 
                     <div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
+                        <!-- 左側：個人檔案與統計 -->
                         <div class="lg:col-span-5 bg-white border border-slate-200/80 rounded-[28px] p-6 shadow-sm flex flex-col justify-between space-y-6">
                             <div class="flex items-center justify-between">
                                 <div class="flex items-center space-x-3">
@@ -229,7 +443,7 @@
                                     </div>
                                     <div>
                                         <div class="text-xs font-mono text-slate-400">@yuwency</div>
-                                        <h3 class="text-lg font-extrabold text-slate-900">吳玉雯 <span class="text-sm font-normal text-slate-500">Yu-Wen Wu</span></h3>
+                                        <h3 class="text-lg font-extrabold text-slate-900">吳玉雯 <span class="text-sm font-normal text-slate-500">yuwency</span></h3>
                                     </div>
                                 </div>
                                 <a href="https://github.com/yuwency" target="_blank" class="inline-flex items-center gap-1.5 bg-purple-50 text-purple-600 hover:bg-purple-100 border border-purple-200 text-xs font-semibold px-3.5 py-2 rounded-full transition">
@@ -239,135 +453,140 @@
 
                             <div class="grid grid-cols-2 gap-3">
                                 <div class="bg-slate-50 border border-slate-100 rounded-2xl p-4">
-                                    <div class="text-3xl font-extrabold font-mono text-slate-900 mb-1">10</div>
+                                    <div class="text-3xl font-extrabold font-mono text-slate-900 mb-1">4</div>
                                     <div class="text-xs font-bold text-slate-700">公開儲存庫</div>
                                     <div class="text-[10px] text-slate-400">Public repositories</div>
                                 </div>
 
                                 <div class="bg-slate-50 border border-slate-100 rounded-2xl p-4">
-                                    <div class="text-3xl font-extrabold font-mono text-slate-900 mb-1">121</div>
+                                    <div class="text-3xl font-extrabold font-mono text-slate-900 mb-1">70</div>
                                     <div class="text-xs font-bold text-slate-700">近一年貢獻</div>
-                                    <div class="text-[10px] text-slate-400">Public contributions</div>
-                                </div>
-
-                                <div class="bg-slate-50 border border-slate-100 rounded-2xl p-4">
-                                    <div class="text-3xl font-extrabold font-mono text-slate-900 mb-1">7</div>
-                                    <div class="text-xs font-bold text-slate-700">偵測到的程式語言</div>
-                                    <div class="text-[10px] text-slate-400">Detected languages</div>
-                                </div>
-
-                                <div class="bg-slate-50 border border-slate-100 rounded-2xl p-4">
-                                    <div class="text-3xl font-extrabold font-mono text-slate-900 mb-1">4</div>
-                                    <div class="text-xs font-bold text-slate-700">精選專案</div>
-                                    <div class="text-[10px] text-slate-400">Featured projects</div>
+                                    <div class="text-[10px] text-slate-400">70 contributions</div>
                                 </div>
                             </div>
 
+                            <!-- 程式語言統計 -->
                             <div class="space-y-3 pt-2">
                                 <div class="flex justify-between items-center">
-                                    <h4 class="text-xs font-bold text-slate-800">程式碼語言分布 (前 5 種)</h4>
+                                    <h4 class="text-xs font-bold text-slate-800">主要程式語言</h4>
                                 </div>
-                                <p class="text-[11px] text-slate-400">依公開儲存庫程式碼大小計算，非熟練度</p>
                                 
                                 <div class="space-y-2.5 pt-1">
                                     <div class="space-y-1">
                                         <div class="flex justify-between text-xs font-mono">
                                             <span class="text-slate-600 font-medium">HTML / CSS</span>
-                                            <span class="text-slate-500 font-bold">45.2%</span>
+                                            <span class="text-slate-500 font-bold">50.0%</span>
                                         </div>
                                         <div class="w-full bg-slate-100 h-2 rounded-full overflow-hidden">
-                                            <div class="bg-orange-500 h-full rounded-full" style="width: 45.2%"></div>
+                                            <div class="bg-orange-500 h-full rounded-full" style="width: 50%"></div>
                                         </div>
                                     </div>
 
                                     <div class="space-y-1">
                                         <div class="flex justify-between text-xs font-mono">
                                             <span class="text-slate-600 font-medium">JavaScript</span>
-                                            <span class="text-slate-500 font-bold">28.4%</span>
+                                            <span class="text-slate-500 font-bold">25.0%</span>
                                         </div>
                                         <div class="w-full bg-slate-100 h-2 rounded-full overflow-hidden">
-                                            <div class="bg-yellow-400 h-full rounded-full" style="width: 28.4%"></div>
+                                            <div class="bg-yellow-400 h-full rounded-full" style="width: 25%"></div>
                                         </div>
                                     </div>
 
                                     <div class="space-y-1">
                                         <div class="flex justify-between text-xs font-mono">
                                             <span class="text-slate-600 font-medium">PHP</span>
-                                            <span class="text-slate-500 font-bold">15.1%</span>
+                                            <span class="text-slate-500 font-bold">25.0%</span>
                                         </div>
                                         <div class="w-full bg-slate-100 h-2 rounded-full overflow-hidden">
-                                            <div class="bg-purple-500 h-full rounded-full" style="width: 15.1%"></div>
-                                        </div>
-                                    </div>
-
-                                    <div class="space-y-1">
-                                        <div class="flex justify-between text-xs font-mono">
-                                            <span class="text-slate-600 font-medium">Python</span>
-                                            <span class="text-slate-500 font-bold">11.3%</span>
-                                        </div>
-                                        <div class="w-full bg-slate-100 h-2 rounded-full overflow-hidden">
-                                            <div class="bg-blue-500 h-full rounded-full" style="width: 11.3%"></div>
+                                            <div class="bg-purple-500 h-full rounded-full" style="width: 25%"></div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
 
+                        <!-- 右側：真實的精選儲存庫展示 -->
                         <div class="lg:col-span-7 bg-white border border-slate-200/80 rounded-[28px] p-6 shadow-sm flex flex-col justify-between space-y-6">
                             <div>
-                                <h3 class="text-lg font-black text-slate-900 mb-1">貢獻活動紀錄</h3>
-                                <p class="text-xs text-slate-400 mb-4">GitHub 最近一年的公開貢獻</p>
-                                
-                                <div class="grid grid-cols-12 text-[10px] font-mono text-slate-400 mb-2 text-center">
-                                    <span>Oct</span><span>Nov</span><span>Dec</span><span>Jan</span>
-                                    <span>Feb</span><span>Mar</span><span>Apr</span><span>May</span>
-                                    <span>Jun</span><span>Jul</span><span>Aug</span><span>Sep</span>
-                                </div>
+                                <h3 class="text-lg font-black text-slate-900 mb-1">熱門儲存庫 (Popular repositories)</h3>
+                                <p class="text-xs text-slate-400 mb-4">由 GitHub 頁面釘選之公開專案</p>
 
-                                <div class="grid grid-cols-12 gap-1.5 p-3 bg-slate-50 rounded-2xl border border-slate-100">
-                                    <div class="space-y-1.5"><div class="w-3 h-3 bg-slate-200 rounded-sm"></div><div class="w-3 h-3 bg-slate-200 rounded-sm"></div><div class="w-3 h-3 bg-slate-200 rounded-sm"></div></div>
-                                    <div class="space-y-1.5"><div class="w-3 h-3 bg-slate-200 rounded-sm"></div><div class="w-3 h-3 bg-purple-300 rounded-sm"></div><div class="w-3 h-3 bg-slate-200 rounded-sm"></div></div>
-                                    <div class="space-y-1.5"><div class="w-3 h-3 bg-slate-200 rounded-sm"></div><div class="w-3 h-3 bg-slate-200 rounded-sm"></div><div class="w-3 h-3 bg-slate-200 rounded-sm"></div></div>
-                                    <div class="space-y-1.5"><div class="w-3 h-3 bg-purple-200 rounded-sm"></div><div class="w-3 h-3 bg-slate-200 rounded-sm"></div><div class="w-3 h-3 bg-purple-400 rounded-sm"></div></div>
-                                    <div class="space-y-1.5"><div class="w-3 h-3 bg-slate-200 rounded-sm"></div><div class="w-3 h-3 bg-slate-200 rounded-sm"></div><div class="w-3 h-3 bg-slate-200 rounded-sm"></div></div>
-                                    <div class="space-y-1.5"><div class="w-3 h-3 bg-purple-300 rounded-sm"></div><div class="w-3 h-3 bg-slate-200 rounded-sm"></div><div class="w-3 h-3 bg-slate-200 rounded-sm"></div></div>
-                                    <div class="space-y-1.5"><div class="w-3 h-3 bg-slate-200 rounded-sm"></div><div class="w-3 h-3 bg-purple-400 rounded-sm"></div><div class="w-3 h-3 bg-slate-200 rounded-sm"></div></div>
-                                    <div class="space-y-1.5"><div class="w-3 h-3 bg-slate-200 rounded-sm"></div><div class="w-3 h-3 bg-slate-200 rounded-sm"></div><div class="w-3 h-3 bg-purple-200 rounded-sm"></div></div>
-                                    <div class="space-y-1.5"><div class="w-3 h-3 bg-purple-500 rounded-sm"></div><div class="w-3 h-3 bg-purple-300 rounded-sm"></div><div class="w-3 h-3 bg-slate-200 rounded-sm"></div></div>
-                                    <div class="space-y-1.5"><div class="w-3 h-3 bg-purple-600 rounded-sm"></div><div class="w-3 h-3 bg-purple-400 rounded-sm"></div><div class="w-3 h-3 bg-purple-200 rounded-sm"></div></div>
-                                    <div class="space-y-1.5"><div class="w-3 h-3 bg-purple-500 rounded-sm"></div><div class="w-3 h-3 bg-slate-200 rounded-sm"></div><div class="w-3 h-3 bg-purple-600 rounded-sm"></div></div>
-                                    <div class="space-y-1.5"><div class="w-3 h-3 bg-purple-300 rounded-sm"></div><div class="w-3 h-3 bg-purple-600 rounded-sm"></div><div class="w-3 h-3 bg-purple-400 rounded-sm"></div></div>
+                                <div class="grid grid-cols-1 md:grid-cols-2 gap-3.5">
+                                    <!-- Repo 1: profile -->
+                                    <div class="p-4 bg-slate-50 border border-slate-100 rounded-2xl flex flex-col justify-between">
+                                        <div>
+                                            <div class="flex items-center justify-between mb-1">
+                                                <a href="https://github.com/yuwency/profile" target="_blank" class="text-sm font-bold text-purple-600 hover:underline">profile</a>
+                                                <span class="text-[10px] border border-slate-200 text-slate-500 px-2 py-0.5 rounded-full">Public</span>
+                                            </div>
+                                            <p class="text-xs text-slate-600 mb-3">個人作品集網站</p>
+                                        </div>
+                                        <div class="flex items-center gap-1.5 text-xs text-slate-500 font-mono">
+                                            <span class="w-2.5 h-2.5 bg-orange-500 rounded-full inline-block"></span>
+                                            <span>HTML</span>
+                                        </div>
+                                    </div>
+
+                                    <!-- Repo 2: Personal-accounting-System -->
+                                    <div class="p-4 bg-slate-50 border border-slate-100 rounded-2xl flex flex-col justify-between">
+                                        <div>
+                                            <div class="flex items-center justify-between mb-1">
+                                                <a href="https://github.com/yuwency/Personal-accounting-System" target="_blank" class="text-sm font-bold text-purple-600 hover:underline">Personal-accounting-System</a>
+                                                <span class="text-[10px] border border-slate-200 text-slate-500 px-2 py-0.5 rounded-full">Public</span>
+                                            </div>
+                                            <p class="text-xs text-slate-600 mb-3">利用 Python Flask、SQLite 與 Chart.js 打造的淺綠風格個人收支管理系統，提供動態收支統計、分類圓餅圖分析與每月預算超支即時提醒。</p>
+                                        </div>
+                                        <div class="flex items-center gap-1.5 text-xs text-slate-500 font-mono">
+                                            <span class="w-2.5 h-2.5 bg-yellow-400 rounded-full inline-block"></span>
+                                            <span>JavaScript</span>
+                                        </div>
+                                    </div>
+
+                                    <!-- Repo 3: Travel-Pockets -->
+                                    <div class="p-4 bg-slate-50 border border-slate-100 rounded-2xl flex flex-col justify-between">
+                                        <div>
+                                            <div class="flex items-center justify-between mb-1">
+                                                <a href="https://github.com/yuwency/Travel-Pockets" target="_blank" class="text-sm font-bold text-purple-600 hover:underline">Travel-Pockets</a>
+                                                <span class="text-[10px] border border-slate-200 text-slate-500 px-2 py-0.5 rounded-full">Public</span>
+                                            </div>
+                                            <p class="text-xs text-slate-600 mb-3">本系統是一個以旅遊規劃為核心的旅遊推薦管理系統 Travel Pockets，提供使用者註冊登入、個人資料管理、景點資料管理、旅遊成員管理及成員願望清單管理等功能。</p>
+                                        </div>
+                                        <div class="flex items-center gap-1.5 text-xs text-slate-500 font-mono">
+                                            <span class="w-2.5 h-2.5 bg-purple-500 rounded-full inline-block"></span>
+                                            <span>PHP</span>
+                                        </div>
+                                    </div>
+
+                                    <!-- Repo 4: dairy-produce-Web -->
+                                    <div class="p-4 bg-slate-50 border border-slate-100 rounded-2xl flex flex-col justify-between">
+                                        <div>
+                                            <div class="flex items-center justify-between mb-1">
+                                                <a href="https://github.com/yuwency/dairy-produce-Web" target="_blank" class="text-sm font-bold text-purple-600 hover:underline">dairy-produce-Web</a>
+                                                <span class="text-[10px] border border-slate-200 text-slate-500 px-2 py-0.5 rounded-full">Public</span>
+                                            </div>
+                                            <p class="text-xs text-slate-600 mb-3">使用 Figma、HTML 製作出農產品網站。</p>
+                                        </div>
+                                        <div class="flex items-center gap-1.5 text-xs text-slate-500 font-mono">
+                                            <span class="w-2.5 h-2.5 bg-orange-500 rounded-full inline-block"></span>
+                                            <span>HTML</span>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
 
-                            <div class="pt-4 border-t border-slate-100">
-                                <h3 class="text-base font-black text-slate-900 mb-1">開發成果摘要</h3>
-                                <p class="text-xs text-slate-400 mb-6">統計數據包含團隊與公開專案協作紀錄</p>
-
-                                <div class="grid grid-cols-3 items-center text-center">
-                                    <div>
-                                        <div class="text-2xl md:text-3xl font-extrabold font-mono text-slate-900 mb-1">121</div>
-                                        <div class="text-xs text-slate-500 font-medium">近一年公開貢獻</div>
-                                    </div>
-
-                                    <div class="flex flex-col items-center">
-                                        <div class="w-24 h-24 rounded-full border-4 border-purple-500 flex items-center justify-center text-purple-600 font-black text-xl font-mono shadow-inner">
-                                            3 days
-                                        </div>
-                                        <div class="text-xs text-slate-500 font-medium mt-2">近一年最長連續貢獻</div>
-                                    </div>
-
-                                    <div>
-                                        <div class="text-2xl md:text-3xl font-extrabold font-mono text-slate-900 mb-1">10</div>
-                                        <div class="text-xs text-slate-500 font-medium">公開儲存庫</div>
-                                    </div>
+                            <div class="pt-4 border-t border-slate-100 flex justify-between items-center">
+                                <div class="text-xs text-slate-500">
+                                    <span class="font-bold text-slate-800">2026 年累積：</span>44 commits in 4 repositories
                                 </div>
+                                <a href="https://github.com/yuwency" target="_blank" class="text-xs font-bold text-purple-600 hover:underline">
+                                    在 GitHub 上查看完整紀錄 ↗
+                                </a>
                             </div>
                         </div>
                     </div>
                 </section>
 
-                <!-- 聯絡方式區塊 (Contact) - 結合按鈕膠囊與詳細資料 -->
+                <!-- 聯絡方式區塊 (Contact) -->
                 <section id="contact" class="scroll-mt-28 bg-white border border-slate-200/80 rounded-[28px] p-8 md:p-10 shadow-sm hover:shadow-md transition duration-300">
                     <div class="flex items-baseline space-x-3 mb-6">
                         <h2 class="text-2xl md:text-3xl font-black text-slate-900">聯絡方式</h2>
