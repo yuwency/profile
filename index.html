@@ -42,7 +42,7 @@
             <a href="#about" id="nav-about" class="nav-item hover:text-purple-600 px-3 py-1.5 rounded-full transition">簡介</a>
             <a href="#education" id="nav-education" class="nav-item hover:text-purple-600 px-3 py-1.5 rounded-full transition">學歷</a>
             <a href="#projects" id="nav-projects" class="nav-item hover:text-purple-600 px-3 py-1.5 rounded-full transition">專案</a>
-            <a href="#experience" id="nav-experience" class="nav-item hover:text-purple-600 px-3 py-1.5 rounded-full transition">經歷</a>
+            <a href="#experience" id="nav-experience" class="nav-item hover:text-purple-600 px-3 py-1.5 rounded-full transition">經歷與證照</a>
             <a href="#github" id="nav-github" class="nav-item hover:text-purple-600 px-3 py-1.5 rounded-full transition">GitHub</a>
             <a href="#contact" id="nav-contact" class="nav-item hover:text-purple-600 px-3 py-1.5 rounded-full transition">聯絡方式</a>
         </nav>
@@ -357,77 +357,159 @@
                     </div>
                 </section>
 
-                <!-- 經歷與競賽區塊 (Experience) -->
+                <!-- 經歷與證照證明合併區塊 (Experience & Certificates) -->
                 <section id="experience" class="scroll-mt-28">
                     <div class="flex items-baseline space-x-3 mb-6">
-                        <h2 class="text-3xl font-black text-slate-900 tracking-tight">Experience</h2>
-                        <span class="text-sm font-medium text-slate-400">經歷與競賽</span>
+                        <h2 class="text-3xl font-black text-slate-900 tracking-tight">Experience & Certificates</h2>
+                        <span class="text-sm font-medium text-slate-400">經歷與證照證明</span>
                     </div>
 
-                    <div class="bg-white border border-slate-200/80 rounded-[28px] p-8 shadow-sm space-y-8">
+                    <div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
                         
-                        <!-- 經歷 1: 苗栗青年黑客松 -->
-                        <div class="flex flex-col md:flex-row md:items-start justify-between gap-4 pb-6 border-b border-slate-100">
-                            <div class="space-y-1.5 flex-1">
-                                <div class="flex items-center gap-2">
-                                    <span class="bg-purple-600 text-white text-[11px] font-bold px-2.5 py-0.5 rounded">黑客松競賽</span>
-                                    <h3 class="text-lg font-bold text-slate-900">苗栗青年黑客松競賽 — 桐花 DRESS CODE 觀光提案</h3>
+                        <!-- 左側 7 欄：實務與競賽經歷 Timeline -->
+                        <div class="lg:col-span-7 bg-white border border-slate-200/80 rounded-[28px] p-7 shadow-sm space-y-6 flex flex-col justify-between">
+                            <div>
+                                <h3 class="text-lg font-black text-slate-900 mb-6 flex items-center gap-2">
+                                    <span class="w-3 h-3 bg-purple-600 rounded-full inline-block"></span>
+                                    競賽、服務與職涯經歷
+                                </h3>
+
+                                <div class="space-y-6 relative border-l-2 border-slate-100 ml-3 pl-6">
+                                    
+                                    <!-- 經歷 1: 苗栗青年黑客松 -->
+                                    <div class="relative">
+                                        <span class="absolute -left-[31px] top-1.5 w-3 h-3 rounded-full bg-purple-600 ring-4 ring-purple-50"></span>
+                                        <div class="flex justify-between items-start">
+                                            <div>
+                                                <span class="bg-purple-100 text-purple-700 text-[10px] font-bold px-2.5 py-0.5 rounded-full inline-block mb-1">黑客松競賽</span>
+                                                <h4 class="text-base font-bold text-slate-900">苗栗青年黑客松競賽 — 桐花 DRESS CODE 觀光提案</h4>
+                                            </div>
+                                            <span class="text-xs font-mono text-slate-400">2026.09</span>
+                                        </div>
+                                        <p class="text-xs text-slate-600 leading-relaxed mt-2">
+                                            以「桐花 DRESS CODE」為核心構想提出地方創生與區域旅遊促進方案，透過視覺意象結合在地觀光，獲得評審針對永續商業模式與長期經濟效益之寶貴反饋。
+                                        </p>
+                                    </div>
+
+                                    <!-- 經歷 2: 數位學伴偏鄉教育 -->
+                                    <div class="relative">
+                                        <span class="absolute -left-[31px] top-1.5 w-3 h-3 rounded-full bg-cyan-500 ring-4 ring-cyan-50"></span>
+                                        <div class="flex justify-between items-start">
+                                            <div>
+                                                <span class="bg-cyan-100 text-cyan-700 text-[10px] font-bold px-2.5 py-0.5 rounded-full inline-block mb-1">社會責任 / 志工</span>
+                                                <h4 class="text-base font-bold text-slate-900">教育部數位學伴計畫 — 線上陪伴輔導大學生</h4>
+                                            </div>
+                                            <span class="text-xs font-mono text-slate-400">大學期間</span>
+                                        </div>
+                                        <p class="text-xs text-slate-600 leading-relaxed mt-2">
+                                            擔任線上數位學伴，累積 48 小時遠距陪伴與線上教學經歷，為苗栗獅潭與永興地區的偏鄉中小學生提供學業輔導與數位學習支持。
+                                        </p>
+                                    </div>
+
+                                    <!-- 經歷 3: 信義房屋競賽 -->
+                                    <div class="relative">
+                                        <span class="absolute -left-[31px] top-1.5 w-3 h-3 rounded-full bg-blue-500 ring-4 ring-blue-50"></span>
+                                        <div class="flex justify-between items-start">
+                                            <div>
+                                                <span class="bg-blue-100 text-blue-700 text-[10px] font-bold px-2.5 py-0.5 rounded-full inline-block mb-1">創意競賽</span>
+                                                <h4 class="text-base font-bold text-slate-900">信義房屋「集思廣益」高齡者福祉創意提案</h4>
+                                            </div>
+                                            <span class="text-xs font-mono text-slate-400">2025</span>
+                                        </div>
+                                        <p class="text-xs text-slate-600 leading-relaxed mt-2">
+                                            針對高齡化社會議題，研擬高齡銀髮族群生活輔助與社會參與提案，展現對於社會議題之敏銳度與創新思考能力。
+                                        </p>
+                                    </div>
+
+                                    <!-- 經歷 4: 緯創資通面試 -->
+                                    <div class="relative">
+                                        <span class="absolute -left-[31px] top-1.5 w-3 h-3 rounded-full bg-amber-500 ring-4 ring-amber-50"></span>
+                                        <div class="flex justify-between items-start">
+                                            <div>
+                                                <span class="bg-amber-100 text-amber-800 text-[10px] font-bold px-2.5 py-0.5 rounded-full inline-block mb-1">企業實習邀請</span>
+                                                <h4 class="text-base font-bold text-slate-900">緯創資通（Wistron）— 光學助理工程師實習面試</h4>
+                                            </div>
+                                            <span class="text-xs font-mono text-slate-400">2026.04</span>
+                                        </div>
+                                        <p class="text-xs text-slate-600 leading-relaxed mt-2">
+                                            獲邀參與緯創資通新竹廠區光學助理工程師實習職缺專屬面試，展現資訊與硬體技術跨域結合能力。
+                                        </p>
+                                    </div>
+
                                 </div>
-                                <p class="text-sm text-slate-600 leading-relaxed pt-1">
-                                    以「桐花 DRESS CODE」為核心構想提出地方創生與區域旅遊促進方案，透過視覺意象結合在地觀光，獲得評審針對永續商業模式與長期經濟效益之寶貴反饋。
-                                </p>
                             </div>
-                            <span class="text-xs font-mono text-slate-400 shrink-0">2026.09</span>
                         </div>
 
-                        <!-- 經歷 2: 數位學伴偏鄉教育 -->
-                        <div class="flex flex-col md:flex-row md:items-start justify-between gap-4 pb-6 border-b border-slate-100">
-                            <div class="space-y-1.5 flex-1">
-                                <div class="flex items-center gap-2">
-                                    <span class="bg-cyan-600 text-white text-[11px] font-bold px-2.5 py-0.5 rounded">社會責任 / 志工</span>
-                                    <h3 class="text-lg font-bold text-slate-900">教育部數位學伴計畫 — 線上陪伴輔導大學生</h3>
-                                </div>
-                                <p class="text-sm text-slate-600 leading-relaxed pt-1">
-                                    擔任線上數位學伴，累積 48 小時遠距陪伴與線上教學經歷，為苗栗獅潭與永興地區的偏鄉中小學生提供學業輔導與數位學習支持。
-                                </p>
-                            </div>
-                            <span class="text-xs font-mono text-slate-400 shrink-0">大學期間</span>
-                        </div>
+                        <!-- 右側 5 欄：專業證照與證明文件 (Certificates) -->
+                        <div class="lg:col-span-5 bg-white border border-slate-200/80 rounded-[28px] p-7 shadow-sm space-y-6 flex flex-col justify-between">
+                            <div>
+                                <h3 class="text-lg font-black text-slate-900 mb-6 flex items-center gap-2">
+                                    <span class="w-3 h-3 bg-amber-500 rounded-full inline-block"></span>
+                                    專業證照與榮譽證明
+                                </h3>
 
-                        <!-- 經歷 3: 信義房屋競賽 -->
-                        <div class="flex flex-col md:flex-row md:items-start justify-between gap-4 pb-6 border-b border-slate-100">
-                            <div class="space-y-1.5 flex-1">
-                                <div class="flex items-center gap-2">
-                                    <span class="bg-blue-600 text-white text-[11px] font-bold px-2.5 py-0.5 rounded">創意競賽</span>
-                                    <h3 class="text-lg font-bold text-slate-900">信義房屋「集思廣益」高齡者福祉創意提案</h3>
-                                </div>
-                                <p class="text-sm text-slate-600 leading-relaxed pt-1">
-                                    針對高齡化社會議題，研擬高齡銀髮族群生活輔助與社會參與提案，展現對於社會議題之敏銳度與創新思考能力。
-                                </p>
-                            </div>
-                            <span class="text-xs font-mono text-slate-400 shrink-0">2025</span>
-                        </div>
+                                <div class="space-y-3.5">
+                                    
+                                    <!-- 證照 1: Python -->
+                                    <div class="bg-slate-50 border border-slate-100 rounded-2xl p-4 hover:border-purple-200 transition">
+                                        <div class="flex justify-between items-start mb-1">
+                                            <div class="font-bold text-slate-900 text-sm">IT Specialist Python 國際認證</div>
+                                            <span class="text-[11px] font-mono text-purple-600 font-extrabold bg-purple-50 px-2 py-0.5 rounded">940分</span>
+                                        </div>
+                                        <div class="text-xs text-slate-500 flex justify-between items-center mt-1">
+                                            <span>Certiport 官方核發</span>
+                                            <span class="font-mono">2026.06.11</span>
+                                        </div>
+                                    </div>
 
-                        <!-- 經歷 4: 專業認證與企業面試 -->
-                        <div class="flex flex-col md:flex-row md:items-start justify-between gap-4">
-                            <div class="space-y-1.5 flex-1">
-                                <div class="flex items-center gap-2">
-                                    <span class="bg-amber-600 text-white text-[11px] font-bold px-2.5 py-0.5 rounded">專業認證與實習</span>
-                                    <h3 class="text-lg font-bold text-slate-900">專業資訊證照與企業實習邀請</h3>
+                                    <!-- 證照 2: ERP -->
+                                    <div class="bg-slate-50 border border-slate-100 rounded-2xl p-4 hover:border-purple-200 transition">
+                                        <div class="flex justify-between items-start mb-1">
+                                            <div class="font-bold text-slate-900 text-sm">ERP 規劃師證照</div>
+                                            <span class="text-[11px] font-mono text-emerald-600 font-extrabold bg-emerald-50 px-2 py-0.5 rounded">通過</span>
+                                        </div>
+                                        <div class="text-xs text-slate-500 flex justify-between items-center mt-1">
+                                            <span>中華企業資源規劃學會</span>
+                                            <span class="font-mono">2026.06.12</span>
+                                        </div>
+                                    </div>
+
+                                    <!-- 證明 3: 數位學伴服務證明 -->
+                                    <div class="bg-slate-50 border border-slate-100 rounded-2xl p-4 hover:border-purple-200 transition">
+                                        <div class="flex justify-between items-start mb-1">
+                                            <div class="font-bold text-slate-900 text-sm">教育部數位學伴服務證明</div>
+                                            <span class="text-[11px] font-mono text-cyan-600 font-extrabold bg-cyan-50 px-2 py-0.5 rounded">48小時</span>
+                                        </div>
+                                        <div class="text-xs text-slate-500 flex justify-between items-center mt-1">
+                                            <span>苗栗獅潭與永興線上課輔</span>
+                                            <span class="font-mono">大學期間</span>
+                                        </div>
+                                    </div>
+
+                                    <!-- 證明 4: 黑客松與競賽參賽證明 -->
+                                    <div class="bg-slate-50 border border-slate-100 rounded-2xl p-4 hover:border-purple-200 transition">
+                                        <div class="flex justify-between items-start mb-1">
+                                            <div class="font-bold text-slate-900 text-sm">苗栗青年黑客松參賽證明</div>
+                                            <span class="text-[11px] font-mono text-slate-600 font-bold bg-slate-200/60 px-2 py-0.5 rounded">證明</span>
+                                        </div>
+                                        <div class="text-xs text-slate-500 flex justify-between items-center mt-1">
+                                            <span>苗栗縣政府 / 桐花 DRESS CODE</span>
+                                            <span class="font-mono">2026.09</span>
+                                        </div>
+                                    </div>
+
                                 </div>
-                                <ul class="text-sm text-slate-600 leading-relaxed list-disc list-inside space-y-1 pt-1">
-                                    <li><strong>IT Specialist Python 國際認證</strong>：高分（940分）通過 Certiport 專業技能測驗（2026.06）</li>
-                                    <li><strong>ERP 規劃師證照</strong>：通過中華企業資源規劃學會專業考照（2026.06）</li>
-                                    <li><strong>緯創資通（Wistron）</strong>：獲邀參與新竹光學助理工程師實習職缺面試（2026.04）</li>
-                                </ul>
                             </div>
-                            <span class="text-xs font-mono text-slate-400 shrink-0">2026</span>
+
+                            <div class="pt-4 border-t border-slate-100 text-xs text-slate-400 text-center">
+                                更多書面證照與獎狀正本可於面試時附上查驗
+                            </div>
                         </div>
 
                     </div>
                 </section>
 
-                <!-- GitHub 區塊 (GitHub) - 精準對照真實語言數據圖片 -->
+                <!-- GitHub 區塊 (GitHub) -->
                 <section id="github" class="scroll-mt-28">
                     <div class="flex items-baseline space-x-3 mb-6">
                         <h2 class="text-3xl font-black text-slate-900 tracking-tight">GitHub</h2>
