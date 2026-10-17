@@ -80,7 +80,7 @@
                 <!-- 專長標籤 -->
                 <div class="flex flex-wrap justify-center gap-3 mb-8">
                     <span class="bg-purple-100/80 text-purple-600 border border-purple-200 text-xs md:text-sm font-semibold px-4 py-1.5 rounded-full shadow-sm hover:scale-105 transition">
-                        UI/UX介面設計
+                        UI/UX 介面設計
                     </span>
                     <span class="bg-purple-100/80 text-purple-600 border border-purple-200 text-xs md:text-sm font-semibold px-4 py-1.5 rounded-full shadow-sm hover:scale-105 transition">
                         前端網頁開發
@@ -181,31 +181,66 @@
 
                         <hr class="border-slate-100 my-6">
 
-                        <div class="space-y-4">
+                        <div class="space-y-6">
                             <div class="text-base font-bold text-slate-800 flex items-center gap-2">
                                 <span>學業平均</span>
                                 <span class="font-mono text-lg text-slate-900">82.37</span>
                                 <span class="text-xs text-slate-400 font-normal">(GPA 3.48)</span>
                             </div>
 
-                            <div class="space-y-2 text-sm text-slate-600 font-medium pt-1">
-                                <div class="text-xs font-bold text-slate-400 uppercase tracking-wider mb-2">核心專業修課：</div>
+                            <div class="space-y-4 pt-1">
+                                <div class="text-xs font-bold text-slate-400 uppercase tracking-wider">核心專業修課：</div>
+                                
+                                <!-- 高分展現 -->
                                 <div class="grid grid-cols-1 md:grid-cols-2 gap-2.5">
-                                    <div class="flex justify-between items-center bg-slate-50 px-3.5 py-2 rounded-xl border border-slate-100">
-                                        <span>Python 程式設計</span>
+                                    <div class="flex justify-between items-center bg-purple-50/50 px-3.5 py-2 rounded-xl border border-purple-100">
+                                        <span class="text-sm font-semibold text-slate-800">Python 程式設計</span>
                                         <span class="font-mono text-purple-600 font-bold">97 分</span>
                                     </div>
-                                    <div class="flex justify-between items-center bg-slate-50 px-3.5 py-2 rounded-xl border border-slate-100">
-                                        <span>資料庫管理系統</span>
+                                    <div class="flex justify-between items-center bg-purple-50/50 px-3.5 py-2 rounded-xl border border-purple-100">
+                                        <span class="text-sm font-semibold text-slate-800">資料庫管理系統</span>
                                         <span class="font-mono text-purple-600 font-bold">96 分</span>
                                     </div>
                                     <div class="flex justify-between items-center bg-slate-50 px-3.5 py-2 rounded-xl border border-slate-100">
-                                        <span>網頁程式設計 (PHP/JS)</span>
+                                        <span class="text-sm text-slate-700">網頁程式設計 (PHP/JS)</span>
                                         <span class="font-mono text-purple-600 font-bold">修畢</span>
                                     </div>
                                     <div class="flex justify-between items-center bg-slate-50 px-3.5 py-2 rounded-xl border border-slate-100">
-                                        <span>系統分析與設計</span>
+                                        <span class="text-sm text-slate-700">系統分析與設計</span>
                                         <span class="font-mono text-purple-600 font-bold">修畢</span>
+                                    </div>
+                                </div>
+
+                                <!-- 詳細分類修課項目 -->
+                                <div class="space-y-3 pt-2">
+                                    <!-- 技術類 -->
+                                    <div class="bg-slate-50 p-4 rounded-2xl border border-slate-100 space-y-2">
+                                        <div class="flex items-center gap-2">
+                                            <span class="bg-amber-100 text-amber-800 text-xs font-bold px-2.5 py-0.5 rounded-md">技術類</span>
+                                        </div>
+                                        <p class="text-xs text-slate-600 leading-relaxed">
+                                            《資庫系系統管理》、《系統分析與設計》、《軟體專案管理》、《人工智慧概論》
+                                        </p>
+                                    </div>
+
+                                    <!-- 商管類 -->
+                                    <div class="bg-slate-50 p-4 rounded-2xl border border-slate-100 space-y-2">
+                                        <div class="flex items-center gap-2">
+                                            <span class="bg-amber-100 text-amber-800 text-xs font-bold px-2.5 py-0.5 rounded-md">商管類</span>
+                                        </div>
+                                        <p class="text-xs text-slate-600 leading-relaxed">
+                                            《行銷管理》、《企業資源規劃系統 (ERP)》、《消費者行為》、《網路廣告與企業概論》
+                                        </p>
+                                    </div>
+
+                                    <!-- 學程 -->
+                                    <div class="bg-slate-50 p-4 rounded-2xl border border-slate-100 space-y-2">
+                                        <div class="flex items-center gap-2">
+                                            <span class="bg-amber-100 text-amber-800 text-xs font-bold px-2.5 py-0.5 rounded-md">跨領域學程</span>
+                                        </div>
+                                        <p class="text-xs text-slate-600 leading-relaxed">
+                                            《行銷與服務創新微學程》、《數位行銷與智慧計計實務學程》
+                                        </p>
                                     </div>
                                 </div>
                             </div>
@@ -301,11 +336,11 @@
                                 <h3 class="text-xl font-bold text-slate-900 mb-2">dairy-produce-Web (農產品展示網站)</h3>
 
                                 <p class="text-sm text-slate-600 leading-relaxed mb-4">
-                                    結合Figma原型設計與HTML/CSS刻板實作的在地農產推廣網站。
+                                    結合 Figma 原型設計與 HTML/CSS 刻板實作的在地農產推廣網站。
                                 </p>
 
                                 <ul class="text-xs text-slate-600 space-y-2 list-disc list-inside leading-relaxed mb-6">
-                                    <li>完整展現從UI/UX原型視覺設計到前端網頁佈局切頁的實務能力</li>
+                                    <li>完整展現從 UI/UX 原型視覺設計到前端網頁佈局切頁的實務能力</li>
                                 </ul>
 
                                 <div class="flex flex-wrap gap-2 mb-6">
@@ -337,7 +372,7 @@
                                 </p>
 
                                 <ul class="text-xs text-slate-600 space-y-2 list-disc list-inside leading-relaxed mb-6">
-                                    <li>使用 CSS 打造現代膠囊風與毛玻璃質感 UI，具備動態滾動效果與輪播背景</li>
+                                    <li>使用 Tailwind CSS 打造現代膠囊風與毛玻璃質感 UI，具備動態滾動效果與輪播背景</li>
                                 </ul>
 
                                 <div class="flex flex-wrap gap-2 mb-6">
@@ -548,7 +583,7 @@
                                 </div>
                             </div>
 
-                            <!-- 程式語言統計（對照截圖真實數據） -->
+                            <!-- 程式語言統計 -->
                             <div class="space-y-3 pt-2">
                                 <div class="flex justify-between items-center">
                                     <h4 class="text-xs font-bold text-slate-800">程式語言占比 (Languages)</h4>
